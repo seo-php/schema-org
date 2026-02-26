@@ -1,0 +1,65 @@
+{
+    "name": "seophp/schema-org",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "seophp",
+        "seo",
+        "schema-org"
+    ],
+    "authors": [
+        {
+            "name": "David Llobell",
+            "email": "dllobellmoya@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/seo-php/schema-org",
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "eolica/coding-standard": "^2.0",
+        "pestphp/pest": "^4.0",
+        "phpstan/phpstan": "^2.0",
+        "rector/rector": "^2.0",
+        "symfony/var-dumper": "^8.0",
+        "nette/php-generator": "^4.2",
+        "seophp/head": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Seo\\SchemaOrg\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Seo\\SchemaOrg\\Tests\\": "tests",
+            "Seo\\SchemaOrg\\Generator\\": "generator/src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": [
+            "ecs check"
+        ],
+        "lint-fix": [
+            "ecs check --fix"
+        ],
+        "analyse": [
+            "phpstan analyse"
+        ],
+        "test": [
+            "pest --colors=always --parallel"
+        ],
+        "refactor": [
+            "rector process"
+        ]
+    }
+}
