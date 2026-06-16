@@ -1,4 +1,5 @@
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "seophp/schema-org",
     "license": "MIT",
     "type": "library",
@@ -7,25 +8,12 @@
         "seo",
         "schema-org"
     ],
-    "authors": [
-        {
-            "name": "David Llobell",
-            "email": "dllobellmoya@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "homepage": "https://github.com/seo-php/schema-org",
+    "homepage": "https://github.com/seo-php/seo",
     "require": {
         "php": "^8.4"
     },
     "require-dev": {
-        "eolica/coding-standard": "^2.0",
-        "pestphp/pest": "^4.0",
-        "phpstan/phpstan": "^2.0",
-        "rector/rector": "^2.0",
-        "symfony/var-dumper": "^8.0",
-        "nette/php-generator": "^4.2",
-        "seophp/head": "dev-main"
+        "seophp/head": "self.version"
     },
     "autoload": {
         "psr-4": {
@@ -38,28 +26,11 @@
             "Seo\\SchemaOrg\\Generator\\": "generator/src"
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
-    "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+    "suggest": {
+        "seophp/head": "Required to use Seo\\SchemaOrg\\Head\\Plugins\\SchemaOrgPlugin."
     },
-    "scripts": {
-        "lint": [
-            "ecs check"
-        ],
-        "lint-fix": [
-            "ecs check --fix"
-        ],
-        "analyse": [
-            "phpstan analyse"
-        ],
-        "test": [
-            "pest --colors=always --parallel"
-        ],
-        "refactor": [
-            "rector process"
-        ]
+    "config": {
+        "sort-packages": true
     }
 }
